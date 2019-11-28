@@ -6,9 +6,9 @@ LLVM_GIT_PROTOCOL ?= "https"
 
 MAJOR_VER = "8"
 MINOR_VER = "0"
-PATCH_VER = "0"
+PATCH_VER = "1"
 
-SRCREV ?= "d2298e74235598f15594fe2c99bbac870a507c59"
+SRCREV ?= "9124fda0adfec205856a1ecca76d2cead11a0e2c"
 
 PV = "${MAJOR_VER}.${MINOR_VER}.${PATCH_VER}"
 BRANCH = "release/${MAJOR_VER}.x"
