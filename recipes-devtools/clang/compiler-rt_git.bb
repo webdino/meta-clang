@@ -35,6 +35,7 @@ EXTRA_OECMAKE += "-DCOMPILER_RT_STANDALONE_BUILD=OFF \
                   -DCMAKE_RANLIB=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}llvm-ranlib \
                   -DCMAKE_AR=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}llvm-ar \
                   -DCMAKE_NM=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}llvm-nm \
+                  -DLLVM_LIBDIR_SUFFIX=64 \
                   -G Ninja ${S}/llvm \
 "
 

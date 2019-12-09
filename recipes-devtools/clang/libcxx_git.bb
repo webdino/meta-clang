@@ -40,11 +40,12 @@ EXTRA_OECMAKE += "\
                   -DCXX_SUPPORTS_CXX11=ON \
                   -DLIBCXXABI_LIBCXX_INCLUDES=${S}/libcxx/include \
                   -DLIBCXX_CXX_ABI_INCLUDE_PATHS=${S}/libcxxabi/include \
-                  -DLIBCXX_CXX_ABI_LIBRARY_PATH=${B}/lib \
+                  -DLIBCXX_CXX_ABI_LIBRARY_PATH=${B}/lib64 \
                   -DCMAKE_AR=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}llvm-ar \
                   -DCMAKE_NM=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}llvm-nm \
                   -DCMAKE_RANLIB=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}llvm-ranlib \
                   -DLLVM_ENABLE_PROJECTS='libcxx;libcxxabi${LIBUNWIND}' \
+                  -DLLVM_LIBDIR_SUFFIX=64 \
                   -G Ninja \
                   ${S}/llvm \
 "
@@ -77,3 +78,5 @@ RDEPENDS_${PN}-dev += "${PN}-staticdev"
 
 BBCLASSEXTEND = "native nativesdk"
 TOOLCHAIN_forcevariable = "clang"
+FILES_${PN}-dev += "${libdir}/include/*"
+FILES_${PN}-staticdev += "${libdir}/*.a"
